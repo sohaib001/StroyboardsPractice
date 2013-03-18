@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import "Player.h"
+#import "PlayersViewController.h"
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    NSMutableArray *players;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
