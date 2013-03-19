@@ -1,22 +1,18 @@
 //
-//  PlayersViewController.m
+//  PlayerDetailsViewController.m
 //  StroyboardsPractice
 //
-//  Created by Sohaib Muhammad on 18/03/2013.
+//  Created by Sohaib Muhammad on 19/03/2013.
 //  Copyright (c) 2013 coeus. All rights reserved.
 //
 
-#import "PlayersViewController.h"
-#import "player.h"
 #import "PlayerDetailsViewController.h"
 
-
-
-@interface PlayersViewController ()
+@interface PlayerDetailsViewController ()
 
 @end
 
-@implementation PlayersViewController
+@implementation PlayerDetailsViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,18 +22,16 @@
     }
     return self;
 }
+-(id)initwithCancelAction:(CancelButtonPressed) cancelAct andDoneAction:(DoneButtonPressed) doneAct{
+    self.cancelPressed = cancelAct;
+    self.donePressed = doneAct;
+    return self;
+}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    PlayerDetailsViewController *VC = [[PlayerDetailsViewController alloc] initwithCancelAction:^(PlayerDetailsViewController *controller) {
-        NSLog(@"Cancel button pressed");
-    } andDoneAction:^(PlayerDetailsViewController *controller) {
-        NSLog(@"Done button pressed");
-    }];
-    
-
-        
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -56,25 +50,21 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     // Return the number of rows in the section.
-    return self.players.count;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"PlayerCell";
+    static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    Player *player = [self.players objectAtIndex:indexPath.row];
-	cell.textLabel.text = player.name;
-	cell.detailTextLabel.text = player.game;
+    
     // Configure the cell...
     
     return cell;
@@ -131,24 +121,20 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    CancelButtonPressed cancelbutton = ^(PlayerDetailsViewController * controller){
-        [self.navigationController popViewControllerAnimated:YES];
-        
-    } ;
+
+- (IBAction)btnCancelPressed:(UIBarButtonItem *)sender {
     
-	if ([segue.identifier isEqualToString:@"AddPlayer"])
-	{
-		//UINavigationController *navigationController = segue.destinationViewController;
-      //  NSLog(@"%d",[navigationController viewControllers].count);
-		PlayerDetailsViewController *playerDetailsViewController = segue.destinationViewController;
-        
-      
-        
-        playerDetailsViewController.cancelPressed = cancelbutton;
+   ;
+     
+    self.cancelPressed (self);
     
-		//playerDetailsViewController.delegate = self;
-	}
+    
+}
+
+- (IBAction)btnDonePressed:(UIBarButtonItem *)sender {
+
+    self.donePressed(self);
+
+
 }
 @end

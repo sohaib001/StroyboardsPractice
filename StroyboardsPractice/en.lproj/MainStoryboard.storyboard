@@ -17,7 +17,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxS-9l-EYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513" y="-1046"/>
+            <point key="canvasLocation" x="1297" y="-2526"/>
         </scene>
         <!--Players View Controller - Players-->
         <scene sceneID="baW-pC-sLH">
@@ -78,11 +78,58 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Players" id="PhM-UA-6Fh"/>
+                    <navigationItem key="navigationItem" title="Players" id="PhM-UA-6Fh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Wte-nw-V98">
+                            <connections>
+                                <segue destination="kKp-2N-bJ1" kind="push" identifier="AddPlayer" id="GLA-Mt-5We"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73a-eg-e4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1441" y="-2497"/>
+            <point key="canvasLocation" x="1829" y="-3290"/>
+        </scene>
+        <!--Player Details View Controller - Add Player-->
+        <scene sceneID="JNj-ug-Nfa">
+            <objects>
+                <tableViewController id="kKp-2N-bJ1" customClass="PlayerDetailsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="XiX-GZ-Lk9">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Ir1-nL-mJ9">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kKp-2N-bJ1" id="ArB-1t-tsR"/>
+                            <outlet property="delegate" destination="kKp-2N-bJ1" id="ypl-ON-Eaq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Player" id="vRo-3L-oMU">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="8SS-Ao-BHH">
+                            <connections>
+                                <action selector="btnCancelPressed:" destination="kKp-2N-bJ1" id="Taa-AK-Kcb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="zbU-EN-4KE">
+                            <connections>
+                                <action selector="btnDonePressed:" destination="kKp-2N-bJ1" id="1bh-hs-ino"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cNf-B3-6XU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2305" y="-3290"/>
         </scene>
         <!--Navigation Controller - Players-->
         <scene sceneID="OLi-WF-qLD">
@@ -99,7 +146,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixY-cY-FN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="433" y="-2670"/>
+            <point key="canvasLocation" x="1313" y="-3290"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TgK-bA-z7I">
@@ -118,29 +165,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jBS-C0-J5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-324" y="-1690"/>
+            <point key="canvasLocation" x="196" y="-2874"/>
         </scene>
     </scenes>
     <resources>
         <image name="Gestures.png" width="30" height="30"/>
         <image name="Players.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PlayerCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayerCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imgViewRatings" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="lblGame" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="PlayersViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayersViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

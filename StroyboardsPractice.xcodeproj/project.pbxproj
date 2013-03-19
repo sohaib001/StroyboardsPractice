@@ -18,6 +18,7 @@
 		F817DD6616F723F7001417D6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F817DD6516F723F7001417D6 /* Default-568h@2x.png */; };
 		F817DD6916F723F7001417D6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F817DD6716F723F7001417D6 /* MainStoryboard.storyboard */; };
 		F817DD6C16F723F7001417D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F817DD6B16F723F7001417D6 /* ViewController.m */; };
+		F8511F9A16F848150019820A /* PlayerDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8511F9916F848150019820A /* PlayerDetailsViewController.m */; };
 		F8ABFB1416F72CF600902DA4 /* 1Star.png in Resources */ = {isa = PBXBuildFile; fileRef = F8ABFAFC16F72CF600902DA4 /* 1Star.png */; };
 		F8ABFB1516F72CF600902DA4 /* 1Star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8ABFAFD16F72CF600902DA4 /* 1Star@2x.png */; };
 		F8ABFB1616F72CF600902DA4 /* 1StarSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = F8ABFAFE16F72CF600902DA4 /* 1StarSmall.png */; };
@@ -64,6 +65,8 @@
 		F817DD6816F723F7001417D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		F817DD6A16F723F7001417D6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F817DD6B16F723F7001417D6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F8511F9816F848150019820A /* PlayerDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDetailsViewController.h; sourceTree = "<group>"; };
+		F8511F9916F848150019820A /* PlayerDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailsViewController.m; sourceTree = "<group>"; };
 		F8ABFAFC16F72CF600902DA4 /* 1Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1Star.png; sourceTree = "<group>"; };
 		F8ABFAFD16F72CF600902DA4 /* 1Star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1Star@2x.png"; sourceTree = "<group>"; };
 		F8ABFAFE16F72CF600902DA4 /* 1StarSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1StarSmall.png; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 		F817DD4016F723F7001417D6 = {
 			isa = PBXGroup;
 			children = (
+				F8511F9816F848150019820A /* PlayerDetailsViewController.h */,
+				F8511F9916F848150019820A /* PlayerDetailsViewController.m */,
 				F8ABFB3316F753BD00902DA4 /* PlayerCell.h */,
 				F8ABFB3416F753BD00902DA4 /* PlayerCell.m */,
 				F8ABFB3016F742A700902DA4 /* Player.h */,
@@ -307,6 +312,7 @@
 				F8ABFB2F16F741FD00902DA4 /* PlayersViewController.m in Sources */,
 				F8ABFB3216F742A700902DA4 /* Player.m in Sources */,
 				F8ABFB3516F753BD00902DA4 /* PlayerCell.m in Sources */,
+				F8511F9A16F848150019820A /* PlayerDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
